@@ -9,9 +9,9 @@ const Counter = () => {
   return (
     <div>
         <p>{valorContador}</p>
-        <button onClick={(valorContador)=>{setValorContador(valorContador+1)}}>Incrementar +</button>
+        <button onClick={()=>{setValorContador(valorContador+1)}}>Incrementar +</button>
         <br></br>
-        <button>Decrementar -</button>
+        <button onClick={()=>{valorContador===0? setValorContador(0) : setValorContador(valorContador-1)}}>Decrementar -</button>
 
     </div>
   )
