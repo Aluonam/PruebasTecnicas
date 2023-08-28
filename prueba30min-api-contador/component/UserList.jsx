@@ -1,4 +1,5 @@
 import React, { useEffect, useState} from 'react'
+import ModalDetail from './ModalDetail'
 
 const UserList = ({valorContador}) => {
 
@@ -16,18 +17,13 @@ const UserList = ({valorContador}) => {
         setDatosAPI(datos);
     }
 
-    const llamadaDetalles = async () =>{
-      const llamadaDetalles = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
-      const datosDetalle = await llamadaDetalles.json();
-      console.log(datosDetalle)
-    } 
 
     const listaUsuarios = datosAPI.map( (valorActual)=> {
         return (
 
         <ul key={valorActual.id}>
             <li>{valorActual.name}</li>
-            <li><button>Detalles</button></li>
+            <li><ModalDetail id={valorActual.id}></ModalDetail></li>
         </ul>
 
         )
