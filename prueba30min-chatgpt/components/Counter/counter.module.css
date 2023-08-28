@@ -1,0 +1,11 @@
+
+
+.p{
+    display: flex;
+    width: 5vw;
+    height: 5vh;
+    background-color: rgb(133, 169, 227);
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center
+}
