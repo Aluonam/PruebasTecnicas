@@ -26,10 +26,8 @@ const ModalDetail = ({id}) => {
       const llamada = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
       const datos = await llamada.json();
       setLlamadaDetalleAPI(datos);
-    //   console.log("datos",datos.username)
   }
   
-console.log("Esto se repite muchas veces por que?¿")
   return (
     <>
       <Button type="primary" onClick={showModal}>
