@@ -1,8 +1,7 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import UserList from '@/component/UserList'
-import Counter from '@/component/Counter'
+import ParentComponent from '@/component/ParentComponent'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,9 +15,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-       <UserList></UserList>
-       <br></br>
-       <Counter></Counter>
+       <ParentComponent></ParentComponent>
       </main>
     </>
   )
