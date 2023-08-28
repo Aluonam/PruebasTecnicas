@@ -16,11 +16,20 @@ const UserList = ({valorContador}) => {
         setDatosAPI(datos);
     }
 
+    const llamadaDetalles = async () =>{
+      const llamadaDetalles = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+      const datosDetalle = await llamadaDetalles.json();
+      console.log(datosDetalle)
+    } 
+
     const listaUsuarios = datosAPI.map( (valorActual)=> {
         return (
+
         <ul key={valorActual.id}>
             <li>{valorActual.name}</li>
+            <li><button>Detalles</button></li>
         </ul>
+
         )
     })
 
@@ -29,6 +38,7 @@ const UserList = ({valorContador}) => {
     <div>
     {listaUsuarios}
     {valorContador}
+    
     </div>
 
   )
