@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 
-const Counter = () => {
+const Counter = ({valorContador,setValorContador}) => {
 
-
-    const [valorContador, setValorContador] = useState(0)
-
+    // El useState esta en el padre ParentComponent y lo recibe por props Counter
 
   return (
     <div>

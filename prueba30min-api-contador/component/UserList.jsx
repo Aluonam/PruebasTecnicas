@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from 'react'
 
-const UserList = () => {
+const UserList = ({valorContador}) => {
 
     const [datosAPI, setDatosAPI] = useState([])
 
@@ -26,7 +26,11 @@ const UserList = () => {
 
   return (
 
-    <div>{listaUsuarios}</div>
+    <div>
+    {listaUsuarios}
+    {valorContador}
+    </div>
+
   )
 }
 

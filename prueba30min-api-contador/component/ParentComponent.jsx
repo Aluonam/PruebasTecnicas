@@ -1,15 +1,17 @@
 import React from 'react'
 import Counter from './Counter'
 import UserList from './UserList'
+import { useState } from 'react'
 
 const ParentComponent = () => {
 
+    const [valorContador, setValorContador] = useState(0)
 
   return (
     <>
-    <Counter></Counter>
+    <Counter valorContador={valorContador} setValorContador={setValorContador}></Counter>
     <br></br>
-    <UserList></UserList>
+    <UserList valorContador={valorContador}></UserList>
     </>
   )
 }
