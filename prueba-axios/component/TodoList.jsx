@@ -27,12 +27,19 @@ const TodoList = () => {
         console.log(llamada);
       }, []);
     
+      const listaDatos = objList.map((valorActual)=>{
+        return (
+            <ul key={valorActual.id}>
+            <li>{valorActual.title}</li>
+            </ul>
+        )
+      })
 
 
   return (
     <>
     <div>TodoList</div>
-    
+    {listaDatos}
     </>
   )
 }
