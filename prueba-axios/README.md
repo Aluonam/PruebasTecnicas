@@ -1,38 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+Tarea 1: Configuración inicial
 
-First, run the development server:
+Crea un nuevo proyecto React utilizando la herramienta de línea de comandos de React.
+Instala el paquete axios para manejar las solicitudes HTTP.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+<code>npm install axios</code>
+
+Tarea 2: Componente de Lista de Tareas
+
+Crea un componente funcional llamado TodoList.
+Agrega un estado que almacene una lista de objetos de tareas en la forma { id, text, completed }.
+Utiliza el efecto useEffect para realizar una solicitud GET a la URL https://jsonplaceholder.typicode.com/todos y almacenar la lista de tareas en el estado.
+
+```javascript
+    useEffect(() => {
+        const apiUrl = 'https://jsonplaceholder.typicode.com/todos'; 
+        axios.get(apiUrl)
+          .then(response => setData(response.data))
+          .catch(error => console.log('Error al obtener los datos:', error));
+      }, []);
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Renderiza la lista de tareas en una lista utilizando elementos <ul> y <li>.
+Muestra el texto de cada tarea y utiliza un estilo de texto tachado si la tarea está completada (completed es true).
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Tarea 3: Manejo de Arrays
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Encima de la lista de tareas, agrega un botón "Eliminar Tareas Completadas".
+Al hacer clic en el botón, filtra las tareas completadas y actualiza el estado para mostrar solo las tareas restantes.
+Tarea 4: Creación y Actualización de Tareas
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Agrega un formulario debajo de la lista de tareas con un campo de entrada de texto.
+Al enviar el formulario, utiliza el efecto useEffect para realizar una solicitud POST a la URL https://jsonplaceholder.typicode.com/todos con el texto de la nueva tarea.
+Actualiza el estado para incluir la nueva tarea en la lista.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Tarea 5: Estilos con CSS
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Agrega estilos para mejorar la apariencia de la lista de tareas.
+Estiliza los elementos de la lista (<li>) para que tengan un fondo claro y un borde.
+Cambia el color del texto de las tareas completadas para que sea más tenue.
