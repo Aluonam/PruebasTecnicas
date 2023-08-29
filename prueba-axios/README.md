@@ -22,7 +22,26 @@ Utiliza el efecto useEffect para realizar una solicitud GET a la URL https://jso
 ```
 
 Renderiza la lista de tareas en una lista utilizando elementos <ul> y <li>.
+```javascript
+const listaDatos = objList.map((valorActual)=>{
+        return (
+            <ul key={valorActual.id}>
+            <li>{valorActual.title}</li>
+            </ul>
+        )
+      })
+```
 Muestra el texto de cada tarea y utiliza un estilo de texto tachado si la tarea está completada (completed es true).
+<code>textDecoration: "line-through"</code>
+```javascript
+const listaDatos = objList.map((valorActual)=>{
+        return (
+            <ul key={valorActual.id}>
+            <li style={valorActual.completed ? {textDecoration: "line-through"}: {}}>{valorActual.title}</li>
+            </ul>
+        )
+      })
+```
 
 Tarea 3: Manejo de Arrays
 
