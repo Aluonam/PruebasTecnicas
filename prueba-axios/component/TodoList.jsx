@@ -6,6 +6,7 @@ const TodoList = () => {
 
     const [objList, setObjList] = useState([ {id: 1, text: 'doing something', completed: true }])
 
+
     useEffect(() => {
       llamadaApi()
     }, [])
@@ -24,10 +25,17 @@ const TodoList = () => {
         )
       })
 
+      const handleClickTareasCompletas = ()=>{
+        const tareasSinCompletar = objList.filter((elementoActual)=>elementoActual.completed!==true)
+        setObjList(tareasSinCompletar)
+      }
+      
+
 
   return (
     <>
-    <div>TodoList</div>
+    <h3>ToDoList</h3>
+    <button onClick={()=>handleClickTareasCompletas()}>Eliminar Tareas Completadas</button>
     {listaDatos}
     </>
   )
