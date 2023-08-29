@@ -29,11 +29,12 @@ const TodoList = () => {
           .then((response) => {
             console.log("respuesta",response.data);
           });
+          //saldrá en consola 201 que significa que se ha enviado con exito, aunque esta BD no permite que yo la cambie y por tanto no aparece una nueva tarea en el DOM
       }
       const listaDatos = objList.map((valorActual)=>{
         return (
             <ul key={valorActual.id}>
-            <li style={valorActual.completed ? {textDecoration: "line-through"}: {}}>{valorActual.title}</li>
+            <li style={valorActual.completed ? {textDecoration: "line-through", color: "gray"}: {backgroundColor: "lightyellow"}}>{valorActual.title}</li>
             </ul>
         )
       })
